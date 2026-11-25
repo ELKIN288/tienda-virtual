@@ -1,0 +1,1134 @@
+/* =========================================================
+   TecnoCaribe - Hoja de estilos principal
+   Proyecto final de Programación Web
+   ========================================================= */
+
+/* ---------- 1. Variables de colores y medidas ---------- */
+:root {
+  --azul-oscuro: #0b3954;
+  --turquesa: #0f9d9a;
+  --turquesa-oscuro: #0b7d7a;
+  --turquesa-claro: #e3f5f4;
+  --coral: #ff6b4a;
+  --amarillo: #ffc145;
+  --texto: #1f2d3a;
+  --gris: #5f6f7c;
+  --borde: #dde6ea;
+  --fondo: #f5f9fa;
+  --blanco: #ffffff;
+  --rojo: #d93636;
+  --verde: #1f9d55;
+  --sombra: 0 6px 18px rgba(11, 57, 84, 0.08);
+  --radio: 14px;
+}
+
+/* ---------- 2. Estilos generales ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  color: var(--texto);
+  background-color: var(--fondo);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Los elementos con el atributo hidden siempre quedan ocultos */
+[hidden] {
+  display: none !important;
+}
+
+.contenedor {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.seccion {
+  padding: 60px 0;
+}
+
+.seccion-clara {
+  background-color: var(--blanco);
+}
+
+.titulo-seccion {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.titulo-seccion h2 {
+  font-size: 2rem;
+  color: var(--azul-oscuro);
+  margin-bottom: 8px;
+}
+
+.titulo-seccion p {
+  color: var(--gris);
+}
+
+.presentacion {
+  max-width: 760px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+}
+
+.centrado {
+  text-align: center;
+  margin-top: 36px;
+}
+
+/* ---------- 3. Botones ---------- */
+.btn {
+  display: inline-block;
+  background-color: var(--turquesa);
+  color: var(--blanco);
+  border: 2px solid transparent;
+  padding: 12px 22px;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s, color 0.2s;
+}
+
+.btn:hover {
+  background-color: var(--turquesa-oscuro);
+  transform: translateY(-2px);
+}
+
+.btn-amarillo {
+  background-color: var(--amarillo);
+  color: var(--azul-oscuro);
+}
+
+.btn-amarillo:hover {
+  background-color: #f5ae1c;
+}
+
+.btn-borde {
+  background-color: transparent;
+  border-color: var(--blanco);
+}
+
+.btn-borde:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.btn-secundario {
+  background-color: var(--blanco);
+  color: var(--azul-oscuro);
+  border-color: var(--borde);
+}
+
+.btn-secundario:hover {
+  background-color: var(--turquesa-claro);
+}
+
+.btn-peligro {
+  background-color: var(--blanco);
+  color: var(--rojo);
+  border-color: var(--rojo);
+}
+
+.btn-peligro:hover {
+  background-color: var(--rojo);
+  color: var(--blanco);
+}
+
+.btn-bloque {
+  display: block;
+  width: 100%;
+}
+
+/* Botón desactivado (por ejemplo, cuando el carrito está vacío) */
+.btn:disabled {
+  background-color: #b8c4ca;
+  border-color: #b8c4ca;
+  color: var(--blanco);
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ---------- 4. Encabezado y menú de navegación ---------- */
+.encabezado {
+  background-color: var(--blanco);
+  box-shadow: var(--sombra);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.encabezado-contenido {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  height: 72px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.5rem;
+  color: var(--azul-oscuro);
+}
+
+.logo img {
+  width: 44px;
+  height: 44px;
+}
+
+.logo strong {
+  color: var(--turquesa);
+}
+
+.menu ul {
+  display: flex;
+  gap: 6px;
+}
+
+.menu a {
+  display: block;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-weight: 500;
+  color: var(--gris);
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.menu a:hover,
+.menu a.activo {
+  background-color: var(--turquesa-claro);
+  color: var(--turquesa-oscuro);
+}
+
+.acciones-encabezado {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.enlace-carrito {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--azul-oscuro);
+  color: var(--blanco);
+  padding: 9px 16px;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: background-color 0.2s;
+}
+
+.enlace-carrito:hover,
+.enlace-carrito.activo {
+  background-color: var(--turquesa);
+}
+
+.icono-carrito {
+  width: 22px;
+  height: 22px;
+}
+
+.contador {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 24px;
+  height: 24px;
+  padding: 0 6px;
+  border-radius: 12px;
+  background-color: var(--amarillo);
+  color: var(--azul-oscuro);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+/* Animación del contador cuando se agrega un producto */
+.contador.salto {
+  animation: salto 0.4s ease;
+}
+
+@keyframes salto {
+  50% {
+    transform: scale(1.4);
+  }
+}
+
+/* Botón del menú para celulares (oculto en computador) */
+.boton-menu {
+  display: none;
+  width: 44px;
+  height: 44px;
+  border: 2px solid var(--borde);
+  border-radius: 10px;
+  background-color: var(--blanco);
+  color: var(--azul-oscuro);
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+/* ---------- 5. Banner principal ---------- */
+.banner {
+  background: linear-gradient(135deg, var(--azul-oscuro), var(--turquesa));
+  color: var(--blanco);
+  padding: 60px 0;
+  overflow: hidden;
+}
+
+.banner-contenido {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 40px;
+}
+
+.etiqueta {
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.15);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  margin-bottom: 16px;
+}
+
+.banner h1 {
+  font-size: 3rem;
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+
+.banner h1 span {
+  color: var(--amarillo);
+}
+
+.banner p {
+  font-size: 1.15rem;
+  opacity: 0.9;
+  max-width: 520px;
+  margin-bottom: 28px;
+}
+
+.banner-botones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.banner-imagen {
+  width: 100%;
+  animation: flotar 4s ease-in-out infinite;
+}
+
+@keyframes flotar {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+/* ---------- 6. Beneficios (sección Quiénes somos) ---------- */
+.beneficios {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.beneficio {
+  background-color: var(--blanco);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+  padding: 28px 24px;
+  text-align: center;
+  transition: transform 0.25s;
+}
+
+.beneficio:hover {
+  transform: translateY(-5px);
+}
+
+.beneficio .icono {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: var(--turquesa-claro);
+  font-size: 1.8rem;
+  margin-bottom: 14px;
+}
+
+.beneficio h3 {
+  color: var(--azul-oscuro);
+  margin-bottom: 6px;
+}
+
+.beneficio p {
+  color: var(--gris);
+}
+
+/* ---------- 7. Título de páginas internas ---------- */
+.titulo-pagina {
+  background: linear-gradient(135deg, var(--azul-oscuro), var(--turquesa));
+  color: var(--blanco);
+  text-align: center;
+  padding: 44px 0;
+}
+
+.titulo-pagina h1 {
+  font-size: 2.3rem;
+  margin-bottom: 6px;
+}
+
+.titulo-pagina p {
+  opacity: 0.9;
+}
+
+/* ---------- 8. Catálogo de productos (tarjetas) ---------- */
+.info-envio {
+  background-color: var(--turquesa-claro);
+  color: var(--turquesa-oscuro);
+  text-align: center;
+  padding: 12px 16px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+.grid-productos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 24px;
+}
+
+.tarjeta {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--blanco);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+  overflow: hidden;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.tarjeta:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 30px rgba(11, 57, 84, 0.16);
+}
+
+.tarjeta img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  background-color: #f0f7f8;
+}
+
+.tarjeta-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex-grow: 1;
+  padding: 18px;
+}
+
+.categoria {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--turquesa);
+}
+
+.tarjeta h3 {
+  font-size: 1.15rem;
+  color: var(--azul-oscuro);
+}
+
+.descripcion {
+  color: var(--gris);
+  font-size: 0.95rem;
+  flex-grow: 1;
+}
+
+.precio {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--azul-oscuro);
+}
+
+/* Créditos de las fotos */
+.creditos {
+  margin-top: 50px;
+  padding: 24px;
+  background-color: var(--blanco);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+  font-size: 0.9rem;
+  color: var(--gris);
+}
+
+.creditos h2 {
+  font-size: 1.2rem;
+  color: var(--azul-oscuro);
+  margin-bottom: 8px;
+}
+
+.creditos ul {
+  margin-top: 12px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(320px, 100%), 1fr));
+  gap: 6px 24px;
+}
+
+.creditos a {
+  color: var(--turquesa-oscuro);
+  text-decoration: underline;
+}
+
+.pie-final a {
+  text-decoration: underline;
+}
+
+/* ---------- 9. Página del carrito ---------- */
+.carrito-layout {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  align-items: start;
+  gap: 28px;
+  padding-top: 40px;
+  padding-bottom: 30px;
+}
+
+.caja {
+  background-color: var(--blanco);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+  padding: 24px;
+}
+
+.titulo-caja {
+  font-size: 1.3rem;
+  color: var(--azul-oscuro);
+  margin-bottom: 16px;
+}
+
+.carrito-vacio {
+  text-align: center;
+  padding: 30px 10px;
+  color: var(--gris);
+}
+
+.icono-vacio {
+  font-size: 3rem;
+}
+
+.carrito-vacio p {
+  font-size: 1.1rem;
+  margin: 8px 0 18px;
+}
+
+/* Tabla del carrito */
+.tabla-carrito {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabla-carrito th {
+  text-align: left;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--gris);
+  padding: 10px;
+  border-bottom: 2px solid var(--borde);
+}
+
+.tabla-carrito td {
+  padding: 14px 10px;
+  border-bottom: 1px solid var(--borde);
+  vertical-align: middle;
+}
+
+.producto-carrito {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 600;
+  color: var(--azul-oscuro);
+}
+
+.producto-carrito img {
+  width: 64px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.subtotal {
+  font-weight: 700;
+  color: var(--azul-oscuro);
+  white-space: nowrap;
+}
+
+.precio-celda {
+  white-space: nowrap;
+}
+
+/* Control de cantidad: botón - , número y botón + */
+.control-cantidad {
+  display: inline-flex;
+  align-items: center;
+  border: 2px solid var(--borde);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.btn-cantidad {
+  width: 34px;
+  height: 36px;
+  border: none;
+  background-color: var(--turquesa-claro);
+  color: var(--turquesa-oscuro);
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.btn-cantidad:hover {
+  background-color: var(--turquesa);
+  color: var(--blanco);
+}
+
+.input-cantidad {
+  width: 48px;
+  height: 36px;
+  border: none;
+  text-align: center;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+/* Quita las flechitas del campo numérico */
+.input-cantidad::-webkit-outer-spin-button,
+.input-cantidad::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.btn-eliminar {
+  background: none;
+  border: none;
+  color: var(--rojo);
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btn-eliminar:hover {
+  background-color: #fdeaea;
+}
+
+.acciones-carrito {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+/* Resumen de la compra */
+.resumen {
+  position: sticky;
+  top: 96px;
+}
+
+.fila-resumen {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px dashed var(--borde);
+  color: var(--gris);
+}
+
+.fila-resumen span:last-child {
+  font-weight: 600;
+  color: var(--texto);
+  text-align: right;
+  white-space: nowrap;
+}
+
+.fila-total {
+  border-bottom: none;
+  padding: 16px 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--azul-oscuro);
+}
+
+.fila-total span:last-child {
+  color: var(--turquesa-oscuro);
+  font-weight: 800;
+}
+
+.nota-envio {
+  background-color: var(--turquesa-claro);
+  color: var(--turquesa-oscuro);
+  font-size: 0.85rem;
+  padding: 8px 12px;
+  border-radius: 8px;
+  margin: 10px 0 0;
+}
+
+.nota-envio:empty {
+  display: none;
+}
+
+/* ---------- 10. Formulario de compra ---------- */
+.seccion-compra {
+  padding-bottom: 50px;
+}
+
+/* Deja espacio para el encabezado fijo cuando la página se desplaza hasta aquí */
+.seccion-compra,
+.confirmacion,
+#nosotros,
+#contacto,
+#creditos {
+  scroll-margin-top: 90px;
+}
+
+.subtitulo {
+  color: var(--gris);
+  margin: -8px 0 20px;
+}
+
+.aviso-formulario {
+  background-color: #fff6e0;
+  color: #8a5a00;
+  border: 1px solid #f5d28a;
+  padding: 12px 16px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.formulario {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px 22px;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.campo-completo {
+  grid-column: 1 / -1;
+}
+
+.campo label {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--azul-oscuro);
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+  padding: 12px 14px;
+  border: 2px solid var(--borde);
+  border-radius: 10px;
+  background-color: var(--blanco);
+  font-family: inherit;
+  font-size: 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.campo textarea {
+  resize: vertical;
+}
+
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus {
+  outline: none;
+  border-color: var(--turquesa);
+  box-shadow: 0 0 0 4px rgba(15, 157, 154, 0.15);
+}
+
+/* Campo con error */
+.campo input.invalido {
+  border-color: var(--rojo);
+  background-color: #fff7f7;
+}
+
+.error {
+  color: var(--rojo);
+  font-size: 0.85rem;
+  min-height: 1.1em;
+}
+
+.nota-formulario {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--gris);
+  margin-top: 10px;
+}
+
+/* ---------- 11. Confirmación de la compra ---------- */
+.confirmacion {
+  text-align: center;
+  border: 2px solid var(--verde);
+  background-color: #f0fbf4;
+  animation: aparecer 0.4s ease;
+}
+
+.confirmacion h2 {
+  color: var(--verde);
+  margin-bottom: 8px;
+}
+
+.confirmacion p {
+  margin-bottom: 8px;
+}
+
+.icono-exito {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 14px;
+  border-radius: 50%;
+  background-color: var(--verde);
+  color: var(--blanco);
+  font-size: 2.2rem;
+}
+
+.lista-pedido {
+  max-width: 480px;
+  margin: 16px auto;
+  padding: 10px 18px;
+  background-color: var(--blanco);
+  border-radius: 10px;
+  text-align: left;
+}
+
+.lista-pedido li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 7px 0;
+  border-bottom: 1px solid var(--borde);
+}
+
+.lista-pedido li:last-child {
+  border-bottom: none;
+}
+
+.conf-total {
+  font-size: 1.2rem;
+}
+
+.confirmacion .btn {
+  margin-top: 12px;
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ---------- 12. Avisos flotantes (mensajes) ---------- */
+.aviso {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  max-width: 360px;
+  padding: 14px 18px;
+  border-radius: 12px;
+  color: var(--blanco);
+  font-weight: 600;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: translateY(150%);
+  transition: opacity 0.3s, transform 0.3s;
+  z-index: 200;
+}
+
+.aviso.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.aviso-exito {
+  background-color: var(--verde);
+}
+
+.aviso-error {
+  background-color: var(--rojo);
+}
+
+.aviso-info {
+  background-color: var(--azul-oscuro);
+}
+
+/* ---------- 13. Pie de página ---------- */
+.pie {
+  background-color: var(--azul-oscuro);
+  color: #cfe3ea;
+}
+
+.pie-contenido {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr;
+  gap: 30px;
+  padding-top: 50px;
+  padding-bottom: 30px;
+}
+
+.pie h3 {
+  color: var(--blanco);
+  margin-bottom: 14px;
+}
+
+.pie address {
+  font-style: normal;
+}
+
+.pie li {
+  margin-bottom: 8px;
+}
+
+.pie a:hover {
+  color: var(--amarillo);
+}
+
+.pie-final {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 18px 20px;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #9fbac6;
+}
+
+/* =========================================================
+   14. DISEÑO ADAPTABLE (RESPONSIVE)
+   ========================================================= */
+
+/* Tabletas */
+@media (max-width: 900px) {
+  .banner-contenido {
+    grid-template-columns: minmax(0, 1fr);
+    text-align: center;
+  }
+
+  .banner p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .banner-botones {
+    justify-content: center;
+  }
+
+  .banner-imagen {
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  .banner h1 {
+    font-size: 2.4rem;
+  }
+
+  .carrito-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .resumen {
+    position: static;
+  }
+
+  .pie-contenido {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Menú desplegable para pantallas pequeñas */
+@media (max-width: 760px) {
+  .boton-menu {
+    display: block;
+  }
+
+  .menu {
+    display: none;
+    position: absolute;
+    top: 72px;
+    left: 0;
+    right: 0;
+    background-color: var(--blanco);
+    box-shadow: 0 10px 20px rgba(11, 57, 84, 0.12);
+  }
+
+  /* La clase "abierto" la pone JavaScript al tocar el botón ☰ */
+  .menu.abierto {
+    display: block;
+  }
+
+  .menu ul {
+    flex-direction: column;
+    padding: 10px 20px 20px;
+  }
+
+  .beneficios {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Teléfonos celulares */
+@media (max-width: 600px) {
+  .logo {
+    font-size: 1.25rem;
+  }
+
+  .logo img {
+    width: 38px;
+    height: 38px;
+  }
+
+  .texto-carrito {
+    display: none;
+  }
+
+  .seccion {
+    padding: 40px 0;
+  }
+
+  .banner {
+    padding: 40px 0;
+  }
+
+  .banner h1 {
+    font-size: 2rem;
+  }
+
+  .titulo-pagina h1 {
+    font-size: 1.8rem;
+  }
+
+  .titulo-seccion h2 {
+    font-size: 1.6rem;
+  }
+
+  .caja {
+    padding: 18px;
+  }
+
+  .formulario {
+    grid-template-columns: 1fr;
+  }
+
+  .pie-contenido {
+    grid-template-columns: 1fr;
+  }
+
+  /* La tabla del carrito se convierte en tarjetas */
+  .tabla-carrito thead {
+    display: none;
+  }
+
+  .tabla-carrito,
+  .tabla-carrito tbody,
+  .tabla-carrito tr,
+  .tabla-carrito td {
+    display: block;
+    width: 100%;
+  }
+
+  .tabla-carrito tr {
+    border: 1px solid var(--borde);
+    border-radius: 12px;
+    padding: 6px 14px;
+    margin-bottom: 14px;
+  }
+
+  .tabla-carrito td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px dashed var(--borde);
+  }
+
+  .tabla-carrito td:last-child {
+    border-bottom: none;
+  }
+
+  /* Muestra el nombre de la columna al lado de cada dato */
+  .tabla-carrito td::before {
+    content: attr(data-label);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--gris);
+  }
+
+  .tabla-carrito td.td-producto::before {
+    display: none;
+  }
+
+  .acciones-carrito .btn {
+    width: 100%;
+  }
+
+  .aviso {
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+    max-width: none;
+  }
+}

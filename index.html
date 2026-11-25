@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="TecnoCaribe: tienda virtual de tecnología y accesorios con envíos a toda Colombia.">
+  <title>TecnoCaribe | Tecnología y accesorios</title>
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+  <!-- ===================== ENCABEZADO ===================== -->
+  <header class="encabezado">
+    <div class="contenedor encabezado-contenido">
+      <a href="index.html" class="logo">
+        <img src="img/logo.svg" alt="Logotipo de TecnoCaribe">
+        <span>Tecno<strong>Caribe</strong></span>
+      </a>
+
+      <nav class="menu" id="menu" aria-label="Menú principal">
+        <ul>
+          <li><a href="index.html" class="activo">Inicio</a></li>
+          <li><a href="#nosotros">Nosotros</a></li>
+          <li><a href="productos.html">Productos</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <div class="acciones-encabezado">
+        <a href="carrito.html" class="enlace-carrito" aria-label="Ver carrito de compras">
+          <svg class="icono-carrito" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M3 4h2l2.4 10.2a1 1 0 0 0 1 .8h8.9a1 1 0 0 0 1-.8L20 7H6.2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="9" cy="19.5" r="1.6" fill="currentColor"/>
+            <circle cx="17" cy="19.5" r="1.6" fill="currentColor"/>
+          </svg>
+          <span class="texto-carrito">Carrito</span>
+          <span class="contador" id="contador-carrito">0</span>
+        </a>
+        <button type="button" class="boton-menu" id="boton-menu" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===================== BANNER PRINCIPAL ===================== -->
+    <section class="banner">
+      <div class="contenedor banner-contenido">
+        <div class="banner-texto">
+          <span class="etiqueta">⚡ Envíos a toda Colombia</span>
+          <h1>Tecnología que te <span>conecta</span> con todo</h1>
+          <p>Audífonos, parlantes, relojes inteligentes y accesorios originales de marcas como Apple, JBL, Sony, Garmin y Logitech.</p>
+          <div class="banner-botones">
+            <a href="productos.html" class="btn btn-amarillo">Ver catálogo</a>
+            <a href="carrito.html" class="btn btn-borde">Ir al carrito</a>
+          </div>
+        </div>
+        <img src="img/banner.svg" alt="Ilustración de un portátil, un celular y unos audífonos" class="banner-imagen">
+      </div>
+    </section>
+
+    <!-- ===================== QUIÉNES SOMOS ===================== -->
+    <section class="seccion" id="nosotros">
+      <div class="contenedor">
+        <div class="titulo-seccion">
+          <h2>¿Quiénes somos?</h2>
+          <p class="presentacion">
+            <strong>TecnoCaribe</strong> es una tienda virtual nacida en Barranquilla, dedicada a la venta de
+            tecnología y accesorios de marcas reconocidas para estudiar, trabajar y divertirse. Queremos que cualquier
+            persona pueda comprar desde su casa, de forma fácil y segura, los productos que usa todos los días.
+          </p>
+        </div>
+
+        <div class="beneficios">
+          <article class="beneficio">
+            <span class="icono">🚚</span>
+            <h3>Envío rápido</h3>
+            <p>Llegamos a toda Colombia. Envío gratis en compras desde $250.000 COP.</p>
+          </article>
+          <article class="beneficio">
+            <span class="icono">🛡️</span>
+            <h3>Garantía</h3>
+            <p>Productos originales con 6 meses de garantía.</p>
+          </article>
+          <article class="beneficio">
+            <span class="icono">💬</span>
+            <h3>Atención personalizada</h3>
+            <p>Te asesoramos antes y después de tu compra.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PRODUCTOS DESTACADOS ===================== -->
+    <section class="seccion seccion-clara">
+      <div class="contenedor">
+        <div class="titulo-seccion">
+          <h2>Productos destacados</h2>
+          <p>Los favoritos de nuestros clientes</p>
+        </div>
+
+        <!-- JavaScript (catalogo.js) llena este espacio con los productos destacados -->
+        <div class="grid-productos" id="productos-destacados"></div>
+
+        <div class="centrado">
+          <a href="productos.html" class="btn">Ver todos los productos →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== PIE DE PÁGINA ===================== -->
+  <footer class="pie" id="contacto">
+    <div class="contenedor pie-contenido">
+      <section>
+        <h3>TecnoCaribe</h3>
+        <p>Tecnología y accesorios al mejor precio, desde Barranquilla para toda Colombia.</p>
+      </section>
+      <section>
+        <h3>Contacto</h3>
+        <address>
+          <ul>
+            <li>📍 Barranquilla, Atlántico, Colombia</li>
+            <li>📞 +57 300 123 4567</li>
+            <li>✉️ contacto@tecnocaribe.co</li>
+            <li>🕘 Lunes a sábado, 8:00 a.m. a 6:00 p.m.</li>
+          </ul>
+        </address>
+      </section>
+      <section>
+        <h3>Enlaces</h3>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="productos.html">Productos</a></li>
+          <li><a href="carrito.html">Carrito de compras</a></li>
+        </ul>
+      </section>
+    </div>
+    <div class="pie-final">
+      <p>© 2026 TecnoCaribe · Proyecto académico de Programación Web · Elkin Ardila Ferreira</p>
+      <p>Tienda ficticia: los precios y datos de contacto son de ejemplo. Las marcas pertenecen a sus respectivos dueños. Fotos de productos: Wikimedia Commons (<a href="productos.html#creditos">ver créditos</a>).</p>
+    </div>
+  </footer>
+
+  <!-- Archivos JavaScript externos (el orden es importante) -->
+  <script src="js/productos.js"></script>
+  <script src="js/carrito.js"></script>
+  <script src="js/catalogo.js"></script>
+</body>
+</html>

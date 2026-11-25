@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <rect width="400" height="300" fill="#f0f7f8"/>
+  <circle cx="200" cy="150" r="118" fill="#dcefef"/>
+  <ellipse cx="200" cy="264" rx="105" ry="9" fill="#0b3954" opacity="0.10"/>
+
+  <rect x="160" y="60" width="26" height="12" rx="3" fill="#90a4ae"/>
+  <rect x="214" y="60" width="26" height="12" rx="3" fill="#90a4ae"/>
+  <rect x="128" y="68" width="144" height="192" rx="24" fill="#0b3954"/>
+  <rect x="140" y="80" width="120" height="168" rx="16" fill="#124a6b"/>
+  <text x="200" y="110" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="bold" fill="#cfe3ea">10.000 mAh</text>
+  <path d="M208 124 L180 172 H198 L190 208 L222 158 H203 L214 124 Z" fill="#ffc145"/>
+  <circle cx="176" cy="228" r="5" fill="#22d3ee"/>
+  <circle cx="192" cy="228" r="5" fill="#22d3ee"/>
+  <circle cx="208" cy="228" r="5" fill="#22d3ee"/>
+  <circle cx="224" cy="228" r="5" fill="#2b5f80"/>
+</svg>

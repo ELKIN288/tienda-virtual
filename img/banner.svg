@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 420" width="560" height="420">
+  <defs>
+    <linearGradient id="pantallaBanner" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0fb5ae"/>
+      <stop offset="1" stop-color="#1e6fd9"/>
+    </linearGradient>
+  </defs>
+  <circle cx="440" cy="92" r="62" fill="#ffc145"/>
+  <circle cx="440" cy="92" r="82" fill="#ffc145" opacity="0.18"/>
+
+  <!-- Portátil -->
+  <rect x="120" y="96" width="300" height="190" rx="14" fill="#0b1f33"/>
+  <rect x="134" y="110" width="272" height="162" rx="6" fill="url(#pantallaBanner)"/>
+  <rect x="150" y="124" width="240" height="14" rx="4" fill="#ffffff" opacity="0.9"/>
+  <rect x="150" y="150" width="70" height="100" rx="8" fill="#ffffff" opacity="0.92"/>
+  <rect x="235" y="150" width="70" height="100" rx="8" fill="#ffffff" opacity="0.92"/>
+  <rect x="320" y="150" width="70" height="100" rx="8" fill="#ffffff" opacity="0.92"/>
+  <rect x="160" y="160" width="50" height="40" rx="5" fill="#dcefef"/>
+  <rect x="245" y="160" width="50" height="40" rx="5" fill="#dcefef"/>
+  <rect x="330" y="160" width="50" height="40" rx="5" fill="#dcefef"/>
+  <rect x="160" y="208" width="40" height="6" rx="3" fill="#90a4ae"/>
+  <rect x="245" y="208" width="40" height="6" rx="3" fill="#90a4ae"/>
+  <rect x="330" y="208" width="40" height="6" rx="3" fill="#90a4ae"/>
+  <rect x="160" y="224" width="50" height="14" rx="4" fill="#0f9d9a"/>
+  <rect x="245" y="224" width="50" height="14" rx="4" fill="#0f9d9a"/>
+  <rect x="330" y="224" width="50" height="14" rx="4" fill="#ff6b4a"/>
+  <path d="M88 286 H452 L432 312 H108 Z" fill="#cfd8dc"/>
+  <rect x="240" y="286" width="60" height="7" rx="3" fill="#9fb0b8"/>
+
+  <!-- Celular -->
+  <rect x="404" y="176" width="92" height="170" rx="16" fill="#102a43"/>
+  <rect x="411" y="188" width="78" height="146" rx="9" fill="#ffffff"/>
+  <circle cx="450" cy="232" r="24" fill="#e3f5f4"/>
+  <path d="M436 222 h4 l4 17 h14 l4 -12 h-20" stroke="#0f9d9a" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="446" cy="244" r="2.5" fill="#0f9d9a"/>
+  <circle cx="457" cy="244" r="2.5" fill="#0f9d9a"/>
+  <rect x="423" y="270" width="54" height="7" rx="3.5" fill="#cfd8dc"/>
+  <rect x="423" y="284" width="38" height="7" rx="3.5" fill="#cfd8dc"/>
+  <rect x="423" y="304" width="54" height="18" rx="6" fill="#ffc145"/>
+
+  <!-- Audífonos -->
+  <path d="M36 300 C36 222 136 222 136 300" stroke="#0b1f33" stroke-width="13" fill="none" stroke-linecap="round"/>
+  <rect x="22" y="284" width="36" height="62" rx="17" fill="#ff6b4a"/>
+  <rect x="114" y="284" width="36" height="62" rx="17" fill="#ff6b4a"/>
+  <rect x="30" y="296" width="20" height="38" rx="10" fill="#e2553a"/>
+  <rect x="122" y="296" width="20" height="38" rx="10" fill="#e2553a"/>
+</svg>

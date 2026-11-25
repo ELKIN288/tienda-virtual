@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Carrito de compras de TecnoCaribe.">
+  <title>Carrito de compras | TecnoCaribe</title>
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+  <!-- ===================== ENCABEZADO ===================== -->
+  <header class="encabezado">
+    <div class="contenedor encabezado-contenido">
+      <a href="index.html" class="logo">
+        <img src="img/logo.svg" alt="Logotipo de TecnoCaribe">
+        <span>Tecno<strong>Caribe</strong></span>
+      </a>
+
+      <nav class="menu" id="menu" aria-label="Menú principal">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="index.html#nosotros">Nosotros</a></li>
+          <li><a href="productos.html">Productos</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <div class="acciones-encabezado">
+        <a href="carrito.html" class="enlace-carrito activo" aria-label="Ver carrito de compras">
+          <svg class="icono-carrito" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M3 4h2l2.4 10.2a1 1 0 0 0 1 .8h8.9a1 1 0 0 0 1-.8L20 7H6.2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="9" cy="19.5" r="1.6" fill="currentColor"/>
+            <circle cx="17" cy="19.5" r="1.6" fill="currentColor"/>
+          </svg>
+          <span class="texto-carrito">Carrito</span>
+          <span class="contador" id="contador-carrito">0</span>
+        </a>
+        <button type="button" class="boton-menu" id="boton-menu" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===================== TÍTULO DE LA PÁGINA ===================== -->
+    <section class="titulo-pagina">
+      <div class="contenedor">
+        <h1>Tu carrito de compras</h1>
+        <p>Revisa tus productos, ajusta las cantidades y finaliza tu compra.</p>
+      </div>
+    </section>
+
+    <!-- ===================== CARRITO + RESUMEN ===================== -->
+    <section class="contenedor carrito-layout">
+
+      <!-- Lista de productos del carrito -->
+      <div class="caja">
+        <h2 class="titulo-caja">Productos seleccionados</h2>
+
+        <!-- Este mensaje solo se ve cuando el carrito está vacío -->
+        <div class="carrito-vacio" id="carrito-vacio" hidden>
+          <span class="icono-vacio">🛒</span>
+          <p>Tu carrito está vacío.</p>
+          <a href="productos.html" class="btn">Ir al catálogo</a>
+        </div>
+
+        <table class="tabla-carrito" id="tabla-carrito">
+          <thead>
+            <tr>
+              <th>Producto</th>
+              <th>Precio</th>
+              <th>Cantidad</th>
+              <th>Subtotal</th>
+              <th>Quitar</th>
+            </tr>
+          </thead>
+          <!-- JavaScript (pagina-carrito.js) llena estas filas -->
+          <tbody id="cuerpo-tabla"></tbody>
+        </table>
+
+        <div class="acciones-carrito">
+          <a href="productos.html" class="btn btn-secundario">← Seguir comprando</a>
+          <button type="button" class="btn btn-peligro" id="btn-vaciar">Vaciar carrito</button>
+        </div>
+      </div>
+
+      <!-- Resumen con los cálculos de la compra -->
+      <aside class="caja resumen">
+        <h2 class="titulo-caja">Resumen de la compra</h2>
+        <div class="fila-resumen">
+          <span>Unidades seleccionadas</span>
+          <span id="total-unidades">0</span>
+        </div>
+        <div class="fila-resumen">
+          <span>Subtotal de productos</span>
+          <span id="subtotal-general">$0 COP</span>
+        </div>
+        <div class="fila-resumen">
+          <span>Costo de envío</span>
+          <span id="costo-envio">$0 COP</span>
+        </div>
+        <p class="nota-envio" id="nota-envio"></p>
+        <div class="fila-resumen fila-total">
+          <span>Total a pagar</span>
+          <span id="total-pagar">$0 COP</span>
+        </div>
+        <button type="button" class="btn btn-bloque" id="btn-continuar">Continuar con la compra</button>
+      </aside>
+    </section>
+
+    <!-- ===================== FINALIZAR COMPRA ===================== -->
+    <section class="contenedor seccion-compra" id="seccion-compra">
+
+      <div class="caja" id="caja-formulario">
+        <h2 class="titulo-caja">Finalizar compra</h2>
+        <p class="subtitulo">Completa tus datos para recibir el pedido.</p>
+
+        <p class="aviso-formulario" id="aviso-formulario" hidden>
+          ⚠️ Tu carrito está vacío. Agrega al menos un producto para poder finalizar la compra.
+        </p>
+
+        <!-- novalidate: la validación la hacemos nosotros con JavaScript -->
+        <form class="formulario" id="formulario-compra" novalidate>
+          <div class="campo">
+            <label for="nombre">Nombre completo *</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Ej: María Pérez" required>
+            <small class="error" id="error-nombre"></small>
+          </div>
+
+          <div class="campo">
+            <label for="correo">Correo electrónico *</label>
+            <input type="email" id="correo" name="correo" placeholder="Ej: maria@correo.com" required>
+            <small class="error" id="error-correo"></small>
+          </div>
+
+          <div class="campo">
+            <label for="telefono">Teléfono *</label>
+            <input type="tel" id="telefono" name="telefono" placeholder="Ej: 3001234567" required>
+            <small class="error" id="error-telefono"></small>
+          </div>
+
+          <div class="campo">
+            <label for="ciudad">Ciudad *</label>
+            <input type="text" id="ciudad" name="ciudad" placeholder="Ej: Barranquilla" required>
+            <small class="error" id="error-ciudad"></small>
+          </div>
+
+          <div class="campo campo-completo">
+            <label for="direccion">Dirección de entrega *</label>
+            <input type="text" id="direccion" name="direccion" placeholder="Ej: Calle 72 # 45-10, apto 301" required>
+            <small class="error" id="error-direccion"></small>
+          </div>
+
+          <div class="campo">
+            <label for="pago">Forma de pago</label>
+            <select id="pago" name="pago">
+              <option value="Pago contra entrega">Pago contra entrega</option>
+              <option value="Transferencia bancaria">Transferencia bancaria</option>
+            </select>
+          </div>
+
+          <div class="campo">
+            <label for="notas">Notas para la entrega (opcional)</label>
+            <textarea id="notas" name="notas" rows="1" placeholder="Ej: Entregar en portería"></textarea>
+          </div>
+
+          <div class="campo-completo">
+            <button type="submit" class="btn btn-bloque" id="btn-finalizar">Finalizar compra</button>
+            <p class="nota-formulario">* Campos obligatorios. Esta compra es una simulación académica: no se realizan pagos reales.</p>
+          </div>
+        </form>
+      </div>
+
+      <!-- Mensaje de confirmación: se muestra cuando la compra se procesa bien -->
+      <div class="caja confirmacion" id="confirmacion" hidden>
+        <div class="icono-exito">✔</div>
+        <h2>¡Compra realizada con éxito!</h2>
+        <p>Gracias, <strong id="conf-nombre"></strong>. Tu pedido <strong id="conf-pedido"></strong> fue procesado correctamente.</p>
+
+        <ul class="lista-pedido" id="conf-productos"></ul>
+
+        <p class="conf-total">Valor total de la compra: <strong id="conf-total"></strong></p>
+        <p>Forma de pago: <span id="conf-pago"></span></p>
+        <p>Enviaremos tu pedido a <strong id="conf-direccion"></strong> y te escribiremos a <strong id="conf-correo"></strong>.</p>
+        <a href="productos.html" class="btn">Seguir comprando</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== PIE DE PÁGINA ===================== -->
+  <footer class="pie" id="contacto">
+    <div class="contenedor pie-contenido">
+      <section>
+        <h3>TecnoCaribe</h3>
+        <p>Tecnología y accesorios al mejor precio, desde Barranquilla para toda Colombia.</p>
+      </section>
+      <section>
+        <h3>Contacto</h3>
+        <address>
+          <ul>
+            <li>📍 Barranquilla, Atlántico, Colombia</li>
+            <li>📞 +57 300 123 4567</li>
+            <li>✉️ contacto@tecnocaribe.co</li>
+            <li>🕘 Lunes a sábado, 8:00 a.m. a 6:00 p.m.</li>
+          </ul>
+        </address>
+      </section>
+      <section>
+        <h3>Enlaces</h3>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="productos.html">Productos</a></li>
+          <li><a href="carrito.html">Carrito de compras</a></li>
+        </ul>
+      </section>
+    </div>
+    <div class="pie-final">
+      <p>© 2026 TecnoCaribe · Proyecto académico de Programación Web · Elkin Ardila Ferreira</p>
+      <p>Tienda ficticia: los precios y datos de contacto son de ejemplo. Las marcas pertenecen a sus respectivos dueños. Fotos de productos: Wikimedia Commons (<a href="productos.html#creditos">ver créditos</a>).</p>
+    </div>
+  </footer>
+
+  <!-- Archivos JavaScript externos (el orden es importante) -->
+  <script src="js/productos.js"></script>
+  <script src="js/carrito.js"></script>
+  <script src="js/pagina-carrito.js"></script>
+</body>
+</html>
